@@ -1,0 +1,7 @@
+# SFTP credentials - never commit these
+.vscode/sftp.json
+sftp.json
+
+# Other sensitive stuff
+*.env
+wp-config.php
