@@ -98,5 +98,14 @@
 			}
 		});
 
+		// Add active class to current page link in mobile menu
+		var currentPath = window.location.pathname.replace(/\/$/, ''); // Remove trailing slash
+		$('.bca-nav-mobile a').each(function() {
+			var linkPath = $(this).attr('href').replace(/\/$/, ''); // Remove trailing slash from link
+			if (linkPath === currentPath) {
+				$(this).addClass('active');
+			}
+		});
+
 	});
 })(jQuery);

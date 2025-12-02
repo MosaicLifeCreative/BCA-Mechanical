@@ -470,6 +470,23 @@ h1, h2, h3, h4, h5 {
     gap: 20px;
 }
 
+/* Hide or reposition the CF7 spinner so it doesn't push the button off-center */
+.bca-request-form .bca-actions .wpcf7-spinner {
+    position: absolute;
+    margin: 0;
+    left: 50%;
+    transform: translateX(50px); /* Position it to the right of the button */
+}
+
+/* Also ensure the paragraph wrapper centers properly */
+.bca-request-form .bca-actions p {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px; /* Space between button and spinner if you keep it visible */
+}
+
 /* CF7 Submit: force visibility over Divi */
 .bca-request-form input[type="submit"].wpcf7-submit,
 .bca-request-form .wpcf7-submit.btn {
@@ -613,6 +630,11 @@ h1, h2, h3, h4, h5 {
     }
 }
 
+/* Spacing between contact details grid and services dropdown */
+.bca-request-form .bca-grid + .bca-grid--single {
+    margin-top: 25px;
+}
+
 /* ===============================
    Spacing above the textarea block ("Any other problems?")
    =============================== */
@@ -682,10 +704,12 @@ h1, h2, h3, h4, h5 {
     z-index: 9998;
     opacity: 0;
     transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
     .bca-mobile-overlay.active {
         opacity: 1;
+        pointer-events: auto;
     }
 
 /* Mobile Navigation Menu */
@@ -735,6 +759,13 @@ h1, h2, h3, h4, h5 {
 
         .bca-nav-mobile a:hover {
             color: var(--brand-red) !important;
+        }
+
+        /* Active page link in mobile menu */
+        .bca-nav-mobile a.active,
+        .bca-nav-mobile .sub-menu a.active {
+            color: var(--brand-red) !important;
+            font-weight: 600;
         }
 
     /* Mobile Submenu Support - Collapsible Dropdowns */
