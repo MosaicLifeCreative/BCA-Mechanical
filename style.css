@@ -850,6 +850,11 @@ h1, h2, h3, h4, h5 {
             box-shadow: 0 4px 12px rgba(230, 57, 70, 0.4);
         }
 
+        /* Keep CTA button white even when active */
+        .bca-nav-mobile .bca-mobile-cta.active {
+            color:white !important;
+        }
+
 /* Hide Desktop Menu on Mobile */
 @media all and (max-width: 980px) {
     /* Show hamburger menu */
